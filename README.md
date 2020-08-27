@@ -6,4 +6,4 @@ Special thanks to Mr. Vikas Dewangan for his lazy 😂 and important idea 😊 f
 
 Thank you to both of the idiots for the contributions they made in the project.
 
- Go checkout the working website at - https://covid-project-201.herokuapp.com/
+ Go checkout the working website at - https://covid-project-301.herokuapp.com/
