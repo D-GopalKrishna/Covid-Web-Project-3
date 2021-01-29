@@ -104,13 +104,10 @@ def country_lineplot():
 
     time_series_date1=[]
     for i in range(len(c_data2['cases_time_series'])):
-        time_series_date1.append(c_data2['cases_time_series'][i]['date'])
+        year = c_data2['cases_time_series'][i]['dateymd'][:4]
+        time_series_date1.append(c_data2['cases_time_series'][i]['date'] + year)
 
-    time_series_date1 = np.array(time_series_date1)
-
-    time_series_date2=[]
-    for i in time_series_date1:
-        time_series_date2.append(i + "2020")
+    time_series_date2 = np.array(time_series_date1)
 
     time_series_date3 = pd.to_datetime(time_series_date2, infer_datetime_format=True)
     time_series_date3 = np.array(time_series_date3)
@@ -128,6 +125,8 @@ def country_lineplot():
     trace1 = go.Scatter(x=dq1['dates'], y=dq1['confirmed_cases'])
     data=[trace1]
     fig = go.Figure(data=data)
+    fig.update_yaxes(type="linear")
+
     fig.update_layout(template="plotly_dark", title_text='Spread of corona virus in India')
     #Timeseries showing the spread of corona virus in India
 
@@ -179,13 +178,10 @@ def country_lineplot_rate():
 
     time_series_date1=[]
     for i in range(len(c_data2['cases_time_series'])):
-        time_series_date1.append(c_data2['cases_time_series'][i]['date'])
+        year = c_data2['cases_time_series'][i]['dateymd'][:4]
+        time_series_date1.append(c_data2['cases_time_series'][i]['date'] + year)
 
-    time_series_date1 = np.array(time_series_date1)
-
-    time_series_date2=[]
-    for i in time_series_date1:
-        time_series_date2.append(i + "2020")
+    time_series_date2 = np.array(time_series_date1)
 
     time_series_date3 = pd.to_datetime(time_series_date2, infer_datetime_format=True)
     time_series_date3 = np.array(time_series_date3)
